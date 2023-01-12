@@ -16,9 +16,7 @@ public final class BoardingDIContainer {
     }
     
     private func makeBoardingUseCase() -> BoardingUseCase {
-        
         return DBBoardingUseCase.init(boardingRepository: dependencies.repo)
-        
     }
 }
 
@@ -38,6 +36,12 @@ public extension BoardingDIContainer {
 }
 
 extension BoardingDIContainer {
+
+    func makeWellComePage() -> WellComeVC {
+        let viewModel = WellComeViewModel.init(boardingUserCase: makeBoardingUseCase())
+        let vc = WellComeVC.init(viewModel: viewModel)
+        return vc
+    }
     
 }
 

@@ -6,12 +6,26 @@
 //
 
 import UIKit
+import SnapKit
 
 class WellComeVC: BaseBoardingViewController<WellComeViewModel> {
-    
+
+    private let titleLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Hello User"
+        return lbl
+    }()
     
 
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        titleLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.top.equalTo(self).offset(20)
+        }
+
+    }
     /*
     // MARK: - Navigation
 

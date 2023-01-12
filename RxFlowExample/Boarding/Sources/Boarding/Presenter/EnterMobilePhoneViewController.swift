@@ -8,11 +8,11 @@
 //
 
 import UIKit
+import SnapKit
 
-class EnterMobilePhoneViewController:UIViewController {
+class EnterMobilePhoneViewController: BaseBoardingViewController<EnterMobilePhoneViewModel>  {
     
-    public var viewModel:EnterMobilePhoneViewModel!
-    
+
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

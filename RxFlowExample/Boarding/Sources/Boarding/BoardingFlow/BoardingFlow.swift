@@ -44,5 +44,13 @@ public final class BoardingFlow: Flow {
         rootViewController.pushViewController(wellComeVC, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: wellComeVC, withNextStepper: wellComeVC.viewModel) )
     }
+
+    private func showEnterMobile() -> FlowContributors {
+        let viewModel = WellComeViewModel()
+        let wellComeVC = WellComeVC(viewModel: viewModel)
+        rootViewController.pushViewController(wellComeVC, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: wellComeVC, withNextStepper: wellComeVC.viewModel) )
+    }
+
     
 }

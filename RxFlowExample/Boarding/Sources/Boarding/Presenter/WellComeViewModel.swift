@@ -10,6 +10,12 @@ import RxFlow
 import RxCocoa
 
 class WellComeViewModel: ViewModelType ,Stepper {
+
+    let  boardingUserCase: BoardingUseCase
+    init(boardingUserCase: BoardingUseCase) {
+        self.boardingUserCase = boardingUserCase
+    }
+
     var steps = PublishRelay<Step>()
 
     struct Input {
